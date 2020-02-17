@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+
+target 'PFXBlocProvider' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for PFXBlocProvider
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxAlamofire'
+  pod 'RxDataSources'
+  pod 'RxOptional'
+  pod 'Nuke'
+  pod 'Unbox'
+  pod 'SwiftGen'
+  pod 'SwiftLint'
+
+  target 'PFXBlocProviderTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'PFXBlocProviderUITests' do
+    # Pods for testing
+  end
+
+end
