@@ -8,6 +8,21 @@
 
 import Foundation
 
-struct SearchState {
+protocol SearchState {
+}
+
+class FetchingSearchState: SearchState {
+    
+}
+
+class FetchedSearchState: SearchState {
+    
+}
+
+class EmptySearchState: SearchState {
+    
+}
+
+class IdleSearchState: SearchState {
     
 }

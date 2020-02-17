@@ -11,10 +11,14 @@ target 'PFXBlocProvider' do
   pod 'RxAlamofire'
   pod 'RxDataSources'
   pod 'RxOptional'
+  pod "RxCoreData"
   pod 'Nuke'
   pod 'Unbox'
   pod 'SwiftGen'
   pod 'SwiftLint'
+  pod 'Hero'
+  pod 'NVActivityIndicatorView'
+
 
   target 'PFXBlocProviderTests' do
     inherit! :search_paths
