@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol EventProtocol {
-    func applyAsync() -> Single<SearchStateProtocol>
+    func applyAsync() -> Observable<SearchStateProtocol>
 }
 
 protocol SearchEventProtocol: EventProtocol {
@@ -29,18 +29,19 @@ class FetchingSearchEvent: SearchEventProtocol {
         self.disposeBag = DisposeBag()
     }
 
-    func applyAsync() -> Single<SearchStateProtocol> {
-        return Single<SearchStateProtocol>.create { [weak self] single in
+    func applyAsync() -> Observable<SearchStateProtocol> {
+        return PublishSubject<SearchStateProtocol>.create { [weak self] observer -> Disposable in
+            observer.on(.next(FetchingSearchState()))
             guard let self = self else {
-                single(.error(NSError(domain: "", code: 0, userInfo: nil)))
+                observer.onError(NSError(domain: "\(#function) : \(#line)", code: BPError.system_deallocated.rawValue, userInfo: nil))
                 return Disposables.create()
             }
             
             self.searchProvider.fetchingSearch(parameterDict: self.parameterDict)
                 .subscribe(onSuccess: { searchResponseModel in
-                    single(.success(FetchedSearchState(searchResponseModel: searchResponseModel)))
+                    observer.onNext(FetchedSearchState(searchResponseModel: searchResponseModel))
                 }) { error in
-                    single(.error(error))
+                    observer.onError(error)
                 }
                 .disposed(by: self.disposeBag)
             return Disposables.create()

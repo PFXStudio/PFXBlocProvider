@@ -28,14 +28,16 @@ class SearchBloc: BlocProtocol {
 
     func dispatch(event: EventProtocol) {
         event.applyAsync()
-            .subscribe(onSuccess: { [weak self] state in
+            .subscribe(onNext: { [weak self] state in
                 guard let self = self else {
                     return
                 }
                 
                 self.stateRelay.accept(state)
-            }) { error in
-            }
+
+                }, onError: { error in
+                    
+            })
             .disposed(by: self.disposeBag)
     }
     

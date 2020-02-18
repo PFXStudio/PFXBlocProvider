@@ -28,18 +28,15 @@ class fetching_search_event: XCTestCase {
         let expt = expectation(description: "Waiting done unit tests...")
         self.searchBloc.stateRelay
             .subscribe(onNext: { state in
-                defer {
-                    expt.fulfill()
-                }
-                
-                if state is FetchedSearchState {
-                    print("FetchedSearchState")
-                }
-
                 if state is FetchingSearchState {
                     print("FetchingSearchState")
                 }
                 
+                if state is FetchedSearchState {
+                    print("FetchedSearchState")
+                    expt.fulfill()
+                }
+
             }, onError: { error in
                 expt.fulfill()
             })

@@ -29,12 +29,7 @@ class SearchProvider: SearchProviderProtocol {
             }
             
             self.repository.requestSearchList(parameterDict: parameterDict)
-                .subscribe(onNext: { [weak self] searchResponseModel in
-                    guard let self = self else {
-                        single(.error(NSError(domain: "\(#function) : \(#line)", code: BPError.system_deallocated.rawValue, userInfo: nil)))
-                        return
-                    }
-                    
+                .subscribe(onNext: { searchResponseModel in
                     single(.success(searchResponseModel))
                     return
                 }, onError: { error in
