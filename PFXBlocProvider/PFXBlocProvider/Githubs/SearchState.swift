@@ -8,21 +8,27 @@
 
 import Foundation
 
-protocol SearchState {
+protocol StateProtocol {
 }
 
-class FetchingSearchState: SearchState {
+protocol SearchStateProtocol: StateProtocol {
+}
+
+class FetchingSearchState: SearchStateProtocol {
     
 }
 
-class FetchedSearchState: SearchState {
+class FetchedSearchState: SearchStateProtocol {
+    let searchResponseModel: SearchResponseModel
+    init(searchResponseModel: SearchResponseModel) {
+        self.searchResponseModel = searchResponseModel
+    }
+}
+
+class EmptySearchState: SearchStateProtocol {
     
 }
 
-class EmptySearchState: SearchState {
-    
-}
-
-class IdleSearchState: SearchState {
+class IdleSearchState: SearchStateProtocol {
     
 }

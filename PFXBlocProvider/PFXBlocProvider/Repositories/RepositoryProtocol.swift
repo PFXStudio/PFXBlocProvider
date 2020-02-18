@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol RepositoryProtocol {
-    
+    func requestSearchList(parameterDict: Dictionary<String, String>) -> Observable<SearchResponseModel>
 }

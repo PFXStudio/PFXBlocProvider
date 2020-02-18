@@ -29,6 +29,17 @@
 		D2AF9E6223FA7A6A00CCF1A3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E6123FA7A6A00CCF1A3 /* SearchViewController.swift */; };
 		D2AF9E6623FA7BF300CCF1A3 /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E6523FA7BF300CCF1A3 /* GithubRepository.swift */; };
 		D2AF9E6A23FA7C0F00CCF1A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E6923FA7C0F00CCF1A3 /* SearchViewModel.swift */; };
+		D2E321E623FBAC8F009BD0F5 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */; };
+		D2E3221223FBBC19009BD0F5 /* fetching_search_event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3221123FBBC19009BD0F5 /* fetching_search_event.swift */; };
+		D2E3221323FBBC98009BD0F5 /* SearchBloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E5923FA728000CCF1A3 /* SearchBloc.swift */; };
+		D2E3221423FBBC98009BD0F5 /* SearchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E5D23FA79F200CCF1A3 /* SearchEvent.swift */; };
+		D2E3221523FBBC98009BD0F5 /* SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E5723FA726A00CCF1A3 /* SearchProvider.swift */; };
+		D2E3221623FBBC98009BD0F5 /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E5F23FA79FD00CCF1A3 /* SearchState.swift */; };
+		D2E3221723FBBD0F009BD0F5 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212482A23FA7E9A008B3E77 /* SearchResponseModel.swift */; };
+		D2E3221823FBBD20009BD0F5 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212482823FA7E64008B3E77 /* RepositoryProtocol.swift */; };
+		D2E3221923FBBD2F009BD0F5 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212482C23FA7EF0008B3E77 /* SearchModel.swift */; };
+		D2E3221A23FBBD3F009BD0F5 /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E6523FA7BF300CCF1A3 /* GithubRepository.swift */; };
+		D2E3221B23FBBD4E009BD0F5 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +91,8 @@
 		D2AF9E6123FA7A6A00CCF1A3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D2AF9E6523FA7BF300CCF1A3 /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
 		D2AF9E6923FA7C0F00CCF1A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
+		D2E3221123FBBC19009BD0F5 /* fetching_search_event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetching_search_event.swift; sourceTree = "<group>"; };
 		F19D6B6472F6548B78800F5D /* Pods-PFXBlocProvider-PFXBlocProviderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PFXBlocProvider-PFXBlocProviderUITests.release.xcconfig"; path = "Target Support Files/Pods-PFXBlocProvider-PFXBlocProviderUITests/Pods-PFXBlocProvider-PFXBlocProviderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F91636716ECAC3A979DB74DC /* Pods-PFXBlocProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PFXBlocProvider.debug.xcconfig"; path = "Target Support Files/Pods-PFXBlocProvider/Pods-PFXBlocProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		F95B5EBBB049E5226C0FD5B2 /* Pods_PFXBlocProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PFXBlocProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +174,7 @@
 		D2AF9E1E23FA719800CCF1A3 /* PFXBlocProvider */ = {
 			isa = PBXGroup;
 			children = (
+				D2E321E423FBAC73009BD0F5 /* Commons */,
 				D2AF9E5C23FA79D400CCF1A3 /* Githubs */,
 				D2AF9E6323FA7A9600CCF1A3 /* Repositories */,
 				D2AF9E5423FA71B200CCF1A3 /* Models */,
@@ -180,6 +194,7 @@
 		D2AF9E3823FA719A00CCF1A3 /* PFXBlocProviderTests */ = {
 			isa = PBXGroup;
 			children = (
+				D2E3221123FBBC19009BD0F5 /* fetching_search_event.swift */,
 				D2AF9E3923FA719A00CCF1A3 /* PFXBlocProviderTests.swift */,
 				D2AF9E3B23FA719A00CCF1A3 /* Info.plist */,
 			);
@@ -247,6 +262,14 @@
 				D2AF9E6123FA7A6A00CCF1A3 /* SearchViewController.swift */,
 			);
 			path = MainViews;
+			sourceTree = "<group>";
+		};
+		D2E321E423FBAC73009BD0F5 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +514,7 @@
 				D2AF9E5E23FA79F200CCF1A3 /* SearchEvent.swift in Sources */,
 				D2AF9E2423FA719800CCF1A3 /* ViewController.swift in Sources */,
 				D2AF9E6623FA7BF300CCF1A3 /* GithubRepository.swift in Sources */,
+				D2E321E623FBAC8F009BD0F5 /* ErrorEnums.swift in Sources */,
 				D2AF9E5A23FA728000CCF1A3 /* SearchBloc.swift in Sources */,
 				D2AF9E6223FA7A6A00CCF1A3 /* SearchViewController.swift in Sources */,
 				D212482923FA7E64008B3E77 /* RepositoryProtocol.swift in Sources */,
@@ -509,6 +533,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E3221423FBBC98009BD0F5 /* SearchEvent.swift in Sources */,
+				D2E3221B23FBBD4E009BD0F5 /* ErrorEnums.swift in Sources */,
+				D2E3221523FBBC98009BD0F5 /* SearchProvider.swift in Sources */,
+				D2E3221A23FBBD3F009BD0F5 /* GithubRepository.swift in Sources */,
+				D2E3221223FBBC19009BD0F5 /* fetching_search_event.swift in Sources */,
+				D2E3221923FBBD2F009BD0F5 /* SearchModel.swift in Sources */,
+				D2E3221723FBBD0F009BD0F5 /* SearchResponseModel.swift in Sources */,
+				D2E3221623FBBC98009BD0F5 /* SearchState.swift in Sources */,
+				D2E3221823FBBD20009BD0F5 /* RepositoryProtocol.swift in Sources */,
+				D2E3221323FBBC98009BD0F5 /* SearchBloc.swift in Sources */,
 				D2AF9E3A23FA719A00CCF1A3 /* PFXBlocProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
