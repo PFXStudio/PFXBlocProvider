@@ -11,7 +11,7 @@ import CoreData
 import RxDataSources
 import RxCoreData
 
-public struct ItemModel : Codable {
+public struct SearchModel : Codable {
 
     var login = ""
     var unique_id = 0
@@ -20,7 +20,7 @@ public struct ItemModel : Codable {
     var gravatar_id = ""
     var url = ""
     var html_url = ""
-    var followers_url = "" // 좋아요
+    var followers_url = ""
     var following_url = ""
     var gists_url = ""
     var starred_url = ""
@@ -103,17 +103,17 @@ public struct ItemModel : Codable {
     }
 }
 
-public func == (lhs: ItemModel, rhs: ItemModel) -> Bool {
+public func == (lhs: SearchModel, rhs: SearchModel) -> Bool {
     return lhs.unique_id == rhs.unique_id
 }
 
-extension ItemModel : Equatable { }
+extension SearchModel : Equatable { }
 
-extension ItemModel : IdentifiableType {
+extension SearchModel : IdentifiableType {
     public var identity: String { return "\(unique_id)" }
 }
 
-extension ItemModel : Persistable {
+extension SearchModel : Persistable {
     public typealias T = NSManagedObject
     
     public static var entityName: String {

@@ -40,6 +40,9 @@ class FetchingSearchEvent: SearchEventProtocol {
             self.searchProvider.fetchingSearch(parameterDict: self.parameterDict)
                 .subscribe(onSuccess: { searchResponseModel in
                     observer.onNext(FetchedSearchState(searchResponseModel: searchResponseModel))
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        observer.onNext(IdleSearchState())
+                    }
                 }) { error in
                     observer.onError(error)
                 }

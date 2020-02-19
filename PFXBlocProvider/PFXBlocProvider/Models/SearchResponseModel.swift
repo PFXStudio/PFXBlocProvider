@@ -11,7 +11,7 @@ import Foundation
 public struct SearchResponseModel: Codable {
     var total_count: Int?
     var incomplete_results: Bool?
-    var items: Array<ItemModel>?
+    var items: Array<SearchModel>?
     var message: String?
     var errors: Array<[String : String]>?
     var documentation_url: String?
@@ -24,7 +24,7 @@ public struct SearchResponseModel: Codable {
         let container = try decoder.container(keyedBy: Keys.self)
         if let total_count = try container.decodeIfPresent(Int.self, forKey: .total_count) { self.total_count = total_count }
         if let incomplete_results = try container.decodeIfPresent(Bool.self, forKey: .incomplete_results) { self.incomplete_results = incomplete_results }
-        if let items = try container.decodeIfPresent(Array<ItemModel>.self, forKey: .items) { self.items = items }
+        if let items = try container.decodeIfPresent(Array<SearchModel>.self, forKey: .items) { self.items = items }
         if let message = try container.decodeIfPresent(String.self, forKey: .message) { self.message = message }
         if let errors = try container.decodeIfPresent(Array<[String : String]>.self, forKey: .errors) { self.errors = errors }
         if let documentation_url = try container.decodeIfPresent(String.self, forKey: .documentation_url) { self.documentation_url = documentation_url }
