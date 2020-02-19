@@ -34,8 +34,7 @@ class SearchBloc: BlocProtocol {
                 }
                 
                 self.stateRelay.accept(state)
-
-                }, onError: { error in
+            }, onError: { error in
                     
             })
             .disposed(by: self.disposeBag)
