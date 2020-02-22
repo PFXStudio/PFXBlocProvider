@@ -27,13 +27,18 @@ class SearchBloc: BlocProtocol {
     }
 
     func dispatch(event: EventProtocol) {
+        typealias Element = SearchStateProtocol
         event.applyAsync()
             .subscribe(onNext: { [weak self] state in
                 guard let self = self else {
                     return
                 }
                 
-                self.stateRelay.accept(state)
+                guard let searchState = state as? SearchStateProtocol else {
+                    return
+                }
+                
+                self.stateRelay.accept(searchState)
             }, onError: { error in
                     
             })

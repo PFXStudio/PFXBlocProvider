@@ -13,7 +13,8 @@ import NVActivityIndicatorView
 
 class SearchViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    @IBOutlet weak var emptyView: UIView!
+
     weak var searchListViewController: SearchListViewController?
     var disposeBag = DisposeBag()
     var viewModel: SearchListViewModel?
@@ -58,6 +59,14 @@ class SearchViewController: UIViewController, NVActivityIndicatorViewable {
                 let selectedIndicatorIndex = 15
                 let indicatorType = self.presentingIndicatorTypes[selectedIndicatorIndex]
                 self.startAnimating(size, message: "Loading...", type: indicatorType, fadeInAnimation: nil)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel?.output.empty
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] isEmpty in
+                guard let self = self else { return }
+                self.emptyView.isHidden = !isEmpty
             })
             .disposed(by: self.disposeBag)
     }

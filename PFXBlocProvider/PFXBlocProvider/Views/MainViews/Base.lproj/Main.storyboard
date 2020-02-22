@@ -62,27 +62,52 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lo8-za-wpw">
+                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 된 결과가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjT-gG-Xlc">
+                                        <rect key="frame" x="8" y="309" width="398" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="LUJ-KL-1qc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hjT-gG-Xlc" firstAttribute="leading" secondItem="lo8-za-wpw" secondAttribute="leading" constant="8" id="EZB-gu-1oy"/>
+                                    <constraint firstItem="hjT-gG-Xlc" firstAttribute="top" secondItem="lo8-za-wpw" secondAttribute="top" constant="309" id="R3e-en-thj"/>
+                                    <constraint firstAttribute="trailing" secondItem="hjT-gG-Xlc" secondAttribute="trailing" constant="8" id="Wyo-GY-Gzu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gxA-wi-VfG" firstAttribute="top" secondItem="EBB-t4-6gj" secondAttribute="top" constant="132" id="0b1-Ry-1Vw"/>
                             <constraint firstAttribute="trailing" secondItem="gxA-wi-VfG" secondAttribute="trailing" id="9gQ-h2-ab5"/>
+                            <constraint firstItem="lo8-za-wpw" firstAttribute="top" secondItem="LT7-bS-19C" secondAttribute="bottom" id="BRu-TY-oNb"/>
+                            <constraint firstItem="lo8-za-wpw" firstAttribute="bottom" secondItem="NZI-Sg-ktI" secondAttribute="bottom" constant="83" id="GHM-Rv-ted"/>
                             <constraint firstAttribute="bottom" secondItem="gxA-wi-VfG" secondAttribute="bottom" id="Mz1-AU-qDu"/>
                             <constraint firstAttribute="trailing" secondItem="LT7-bS-19C" secondAttribute="trailing" symbolic="YES" id="VmI-bH-y8W"/>
+                            <constraint firstItem="lo8-za-wpw" firstAttribute="leading" secondItem="NZI-Sg-ktI" secondAttribute="leading" id="WDo-bL-7ac"/>
                             <constraint firstItem="LT7-bS-19C" firstAttribute="top" secondItem="EBB-t4-6gj" secondAttribute="top" constant="88" id="YQa-ge-bmT"/>
                             <constraint firstItem="gxA-wi-VfG" firstAttribute="leading" secondItem="EBB-t4-6gj" secondAttribute="leading" id="fbd-jZ-we5"/>
                             <constraint firstItem="LT7-bS-19C" firstAttribute="leading" secondItem="EBB-t4-6gj" secondAttribute="leading" symbolic="YES" id="j4y-tg-cIq"/>
+                            <constraint firstItem="NZI-Sg-ktI" firstAttribute="trailing" secondItem="lo8-za-wpw" secondAttribute="trailing" id="yGh-1G-Lgf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NZI-Sg-ktI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="nWt-na-agS"/>
                     <connections>
+                        <outlet property="emptyView" destination="lo8-za-wpw" id="BvH-oK-kqi"/>
                         <outlet property="searchBar" destination="LT7-bS-19C" id="LGp-Kb-uBG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTT-h9-SrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="-113"/>
+            <point key="canvasLocation" x="1346.376811594203" y="-113.16964285714285"/>
         </scene>
         <!--Search List View Controller-->
         <scene sceneID="Mc6-TD-8Ra">
@@ -175,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wus-Sw-FgQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="-113"/>
+            <point key="canvasLocation" x="2033" y="-113"/>
         </scene>
     </scenes>
     <resources>

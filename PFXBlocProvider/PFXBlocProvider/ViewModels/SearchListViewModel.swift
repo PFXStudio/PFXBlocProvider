@@ -20,11 +20,13 @@ class SearchListViewModel {
     struct Output {
         var sections: Observable<[BaseSectionTableViewModel]>
         var loading: Observable<Bool>
+        var empty: Observable<Bool>
     }
     
     var output: SearchListViewModel.Output!
     var input: SearchListViewModel.Input!
     private var sectionsSubject = BehaviorRelay<[BaseSectionTableViewModel]>(value: [BaseSectionTableViewModel()])
+    private var emptySubject = BehaviorRelay<Bool>(value: true)
     private var loadingSubject = ReplaySubject<Bool>.create(bufferSize: 1)
     private var searchSubject: PublishSubject<String> = PublishSubject()
     private var nextSubject: PublishSubject<String> = PublishSubject()
@@ -36,7 +38,7 @@ class SearchListViewModel {
     private var parameterDict = ["" : ""]
 
     init() {
-        self.output = SearchListViewModel.Output(sections: self.sectionsSubject.asObservable(), loading: self.loadingSubject.asObservable())
+        self.output = SearchListViewModel.Output(sections: self.sectionsSubject.asObservable(), loading: self.loadingSubject.asObservable(), empty: self.emptySubject.asObservable())
         self.input = Input(searchObserver: self.searchSubject.asObserver(), nextObserver: self.nextSubject.asObserver())
         
         self.searchSubject.distinctUntilChanged()
@@ -84,6 +86,7 @@ class SearchListViewModel {
                         return
                     }
                     
+                    self.emptySubject.accept(false)
                     for i in items {
                         let viewModel = SearchCellViewModel(reuseIdentifier: String(describing: SearchCell.self), identifier: String(describing: SearchCell.self) + String.random())
                         viewModel.name = i.login
@@ -104,7 +107,13 @@ class SearchListViewModel {
                     self.loadingSubject.onNext(false)
                     return
                 }
-            
+                
+                if let _ = state as? EmptySearchState {
+                    print("EmptySearchState")
+                    self.sectionsSubject.accept([BaseSectionTableViewModel()])
+                    self.emptySubject.accept(true)
+                    return
+                }
 
             }, onError: { error in
                 
