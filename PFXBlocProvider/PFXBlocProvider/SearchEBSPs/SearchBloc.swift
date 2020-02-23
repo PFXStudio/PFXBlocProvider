@@ -10,13 +10,9 @@ import Foundation
 import RxSwift
 import RxRelay
 
-protocol BlocProtocol {
-    func dispatch(event: EventProtocol)
-}
-
-class SearchBloc: BlocProtocol {
+class SearchBloc: BaseBlocProtocol {
     static let shared = SearchBloc()
-    let stateRelay = PublishRelay<StateProtocol>()
+    let stateRelay = PublishRelay<BaseStateProtocol>()
     var disposeBag = DisposeBag()
     
     init() {
@@ -26,21 +22,19 @@ class SearchBloc: BlocProtocol {
         self.disposeBag = DisposeBag()
     }
 
-    func dispatch(event: EventProtocol) {
+    func dispatch(event: BaseEventProtocol) {
         typealias Element = SearchStateProtocol
         event.applyAsync()
             .subscribe(onNext: { [weak self] state in
-                guard let self = self else {
-                    return
-                }
-                
+                guard let self = self else { return }
                 guard let searchState = state as? SearchStateProtocol else {
                     return
                 }
                 
                 self.stateRelay.accept(searchState)
-            }, onError: { error in
-                    
+            }, onError: { [weak self] error in
+                guard let self = self else { return }
+                self.stateRelay.accept(ErrorSearchState(error: error as NSError))
             })
             .disposed(by: self.disposeBag)
     }

@@ -1,15 +1,15 @@
 //
-//  fetching_search_event.swift
+//  fetching_false_search_event_02.swift
 //  PFXBlocProviderTests
 //
-//  Created by succorer on 2020/02/18.
+//  Created by succorer on 23/02/2020.
 //  Copyright © 2020 pfxstudio. All rights reserved.
 //
 
 import XCTest
 import RxSwift
 
-class fetching_search_event: XCTestCase {
+class fetching_false_search_event_02: XCTestCase {
     let searchBloc = SearchBloc()
     let timeout = TimeInterval(10)
     var disposeBag = DisposeBag()
@@ -26,24 +26,23 @@ class fetching_search_event: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let expt = expectation(description: "Waiting done unit tests...")
+
+        // When
         self.searchBloc.stateRelay
             .subscribe(onNext: { state in
-                if state is FetchingSearchState {
-                    print("FetchingSearchState")
-                }
+                // Then
+                XCTAssertTrue(state is ErrorSearchState)
+                expt.fulfill()
                 
-                if state is FetchedSearchState {
-                    print("FetchedSearchState")
-                    expt.fulfill()
-                }
-
             }, onError: { error in
                 expt.fulfill()
             })
             .disposed(by: self.disposeBag)
-
-        let event = FetchingSearchEvent(parameterDict: ["q" : "tom", "page" : "1"])
+        
+        // Given
+        let event = FetchingSearchEvent(parameterDict: ["q" : "tom", "page" : "abc"])
         self.searchBloc.dispatch(event: event)
+
         waitForExpectations(timeout: self.timeout, handler: { (error) in
             if error == nil {
                 return

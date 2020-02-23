@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol SearchProviderProtocol {
+protocol SearchProviderProtocol: BaseProviderProtocol {
     func fetchingSearch(parameterDict: [String : String]) -> Single<SearchResponseModel>
 }
 

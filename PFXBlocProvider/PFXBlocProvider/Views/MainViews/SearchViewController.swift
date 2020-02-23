@@ -50,6 +50,7 @@ class SearchViewController: UIViewController, NVActivityIndicatorViewable {
         self.viewModel?.output.loading
             .subscribe(onNext: { [weak self] isLoading in
                 guard let self = self else { return }
+                self.searchBar.resignFirstResponder()
                 if isLoading == false {
                     self.stopAnimating()
                     return
@@ -67,6 +68,14 @@ class SearchViewController: UIViewController, NVActivityIndicatorViewable {
             .subscribe(onNext: { [weak self] isEmpty in
                 guard let self = self else { return }
                 self.emptyView.isHidden = !isEmpty
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel?.output.error
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { error in
+                self.searchBar.resignFirstResponder()
+                ErrorViewer.shared.show(error: error)
             })
             .disposed(by: self.disposeBag)
     }

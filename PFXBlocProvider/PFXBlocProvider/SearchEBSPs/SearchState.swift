@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol StateProtocol {
-}
-
-protocol SearchStateProtocol: StateProtocol {
+protocol SearchStateProtocol: BaseStateProtocol {
 }
 
 class FetchingSearchState: SearchStateProtocol {
@@ -31,4 +28,11 @@ class EmptySearchState: SearchStateProtocol {
 
 class IdleSearchState: SearchStateProtocol {
     
+}
+
+class ErrorSearchState: SearchStateProtocol {
+    let error: NSError
+    init(error: NSError) {
+        self.error = error
+    }
 }

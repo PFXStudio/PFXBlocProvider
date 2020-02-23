@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="Lm2-j9-G0n">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="blL-vL-UFC" customClass="DetailViewController" customModule="PFXBlocProvider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gpM-Xy-h8L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeW-en-fPT">
+                                <rect key="frame" x="20" y="44" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-hl-sPq">
+                                <rect key="frame" x="20" y="73" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFF-t2-YOE">
+                                <rect key="frame" x="20" y="102" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUX-na-dJc">
+                                <rect key="frame" x="20" y="131" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbg-jq-NYu">
+                                <rect key="frame" x="20" y="160" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jbg-jq-NYu" firstAttribute="top" secondItem="JUX-na-dJc" secondAttribute="bottom" constant="8" id="1aN-0Z-hX0"/>
+                            <constraint firstItem="UPW-hl-sPq" firstAttribute="trailing" secondItem="vFF-t2-YOE" secondAttribute="trailing" id="47m-pE-VWy"/>
+                            <constraint firstItem="oeW-en-fPT" firstAttribute="leading" secondItem="UPW-hl-sPq" secondAttribute="leading" id="4Jd-Vf-EjY"/>
+                            <constraint firstItem="vFF-t2-YOE" firstAttribute="top" secondItem="UPW-hl-sPq" secondAttribute="bottom" constant="8" id="AJq-9r-c39"/>
+                            <constraint firstItem="vFF-t2-YOE" firstAttribute="trailing" secondItem="JUX-na-dJc" secondAttribute="trailing" id="Jzi-gP-8vl"/>
+                            <constraint firstItem="oeW-en-fPT" firstAttribute="trailing" secondItem="UPW-hl-sPq" secondAttribute="trailing" id="OIA-s2-hXn"/>
+                            <constraint firstItem="UPW-hl-sPq" firstAttribute="top" secondItem="oeW-en-fPT" secondAttribute="bottom" constant="8" id="UTO-c1-jOT"/>
+                            <constraint firstItem="JUX-na-dJc" firstAttribute="trailing" secondItem="jbg-jq-NYu" secondAttribute="trailing" id="XL7-nb-qvn"/>
+                            <constraint firstItem="UPW-hl-sPq" firstAttribute="leading" secondItem="vFF-t2-YOE" secondAttribute="leading" id="Xlq-pF-ErH"/>
+                            <constraint firstItem="oeW-en-fPT" firstAttribute="top" secondItem="s7z-sS-Dom" secondAttribute="top" id="dI6-Ty-Wzj"/>
+                            <constraint firstItem="oeW-en-fPT" firstAttribute="trailing" secondItem="gpM-Xy-h8L" secondAttribute="trailingMargin" id="erT-CS-7hV"/>
+                            <constraint firstItem="JUX-na-dJc" firstAttribute="leading" secondItem="jbg-jq-NYu" secondAttribute="leading" id="gY9-J4-kO5"/>
+                            <constraint firstItem="oeW-en-fPT" firstAttribute="leading" secondItem="gpM-Xy-h8L" secondAttribute="leadingMargin" id="s4v-76-9rG"/>
+                            <constraint firstItem="vFF-t2-YOE" firstAttribute="leading" secondItem="JUX-na-dJc" secondAttribute="leading" id="tQQ-uQ-QfD"/>
+                            <constraint firstItem="JUX-na-dJc" firstAttribute="top" secondItem="vFF-t2-YOE" secondAttribute="bottom" constant="8" id="tiJ-Tx-Dea"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s7z-sS-Dom"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarLabel" destination="UPW-hl-sPq" id="3G5-NF-hT9"/>
+                        <outlet property="gravatarLabel" destination="vFF-t2-YOE" id="sAn-P0-zJU"/>
+                        <outlet property="htmlLabel" destination="JUX-na-dJc" id="rhq-R7-zMa"/>
+                        <outlet property="nameLabel" destination="oeW-en-fPT" id="V0f-0w-8Fo"/>
+                        <outlet property="scoreLabel" destination="jbg-jq-NYu" id="H3h-Gu-cs9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eV7-RT-hAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="-106.47321428571428"/>
+        </scene>
+    </scenes>
+</document>
