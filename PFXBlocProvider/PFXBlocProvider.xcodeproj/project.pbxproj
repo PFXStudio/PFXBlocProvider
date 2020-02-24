@@ -72,6 +72,11 @@
 		D2E3221A23FBBD3F009BD0F5 /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E6523FA7BF300CCF1A3 /* GithubRepository.swift */; };
 		D2E3221B23FBBD4E009BD0F5 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */; };
 		D2E4DD09240340F40072405E /* ObservableType+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DD08240340F40072405E /* ObservableType+Extenstion.swift */; };
+		D2E4DF222403ABF70072405E /* BaseSectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA71A923FCBBBE008564C5 /* BaseSectionTableViewModel.swift */; };
+		D2E4DF232403AC110072405E /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA71AC23FCBC13008564C5 /* String+Extenstion.swift */; };
+		D2E4DF242403AC320072405E /* BaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA71A723FCBAE6008564C5 /* BaseCellViewModel.swift */; };
+		D2E4DF252403AC840072405E /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD343823FCB51A00056A8C /* SearchCell.swift */; };
+		D2E4DF262403AC910072405E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA71AF23FCBFDF008564C5 /* BaseCell.swift */; };
 		D2F7CFA62401179F00B98B18 /* ErrorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7CFA52401179F00B98B18 /* ErrorViewer.swift */; };
 /* End PBXBuildFile section */
 
@@ -707,24 +712,29 @@
 				D25EACCA24026CB000031946 /* DetailProvider.swift in Sources */,
 				D2E3221B23FBBD4E009BD0F5 /* ErrorEnums.swift in Sources */,
 				D2E3221523FBBC98009BD0F5 /* SearchProvider.swift in Sources */,
+				D2E4DF262403AC910072405E /* BaseCell.swift in Sources */,
 				D2E3221A23FBBD3F009BD0F5 /* GithubRepository.swift in Sources */,
 				D2E3221923FBBD2F009BD0F5 /* SearchModel.swift in Sources */,
+				D2E4DF222403ABF70072405E /* BaseSectionTableViewModel.swift in Sources */,
 				D2E3221723FBBD0F009BD0F5 /* SearchResponseModel.swift in Sources */,
 				D25EACB824024F5C00031946 /* BaseEventProtocol.swift in Sources */,
 				D2E3221623FBBC98009BD0F5 /* SearchState.swift in Sources */,
 				D2E3221823FBBD20009BD0F5 /* RepositoryProtocol.swift in Sources */,
 				D25EACB924024F5C00031946 /* BaseBlocProtocol.swift in Sources */,
 				D25EACD72402710C00031946 /* DetailViewModel.swift in Sources */,
+				D2E4DF252403AC840072405E /* SearchCell.swift in Sources */,
 				D25EACD3240270E100031946 /* DetailViewController.swift in Sources */,
 				D2E3221323FBBC98009BD0F5 /* SearchBloc.swift in Sources */,
 				D2AF9E3A23FA719A00CCF1A3 /* PFXBlocProviderTests.swift in Sources */,
 				D25EACBB24024F5C00031946 /* BaseProviderProtocol.swift in Sources */,
 				D25EACC824026CB000031946 /* DetailEvent.swift in Sources */,
 				D25EACB724024EFD00031946 /* fetching_false_search_event_01.swift in Sources */,
+				D2E4DF242403AC320072405E /* BaseCellViewModel.swift in Sources */,
 				D25EACC624026CB000031946 /* DetailBloc.swift in Sources */,
 				D25EACBD2402508600031946 /* fetching_false_search_event_02.swift in Sources */,
 				D25EACCC24026CB000031946 /* DetailState.swift in Sources */,
 				D25EACBA24024F5C00031946 /* BaseStateProtocol.swift in Sources */,
+				D2E4DF232403AC110072405E /* String+Extenstion.swift in Sources */,
 				D25EACBF240250FB00031946 /* fetching_true_search_event_01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
