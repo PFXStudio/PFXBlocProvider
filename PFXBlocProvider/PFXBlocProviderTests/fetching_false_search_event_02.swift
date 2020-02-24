@@ -10,6 +10,7 @@ import XCTest
 import RxSwift
 
 class fetching_false_search_event_02: XCTestCase {
+    // mockup 이나 stub으로 변경 할 예정
     let searchBloc = SearchBloc()
     let timeout = TimeInterval(10)
     var disposeBag = DisposeBag()
