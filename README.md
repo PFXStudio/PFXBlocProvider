@@ -1,7 +1,7 @@
 To run the example project, clone the repo, and run `pod install` from the PFXBlocProvider directory first!!!!
 
 # Screenshots
-![Launch screen](/1.png) ![Collection Screen](/2.png)
+![Launch screen](/1.png) ![Collection Screen](/2.png) ![Collection Screen](/3.png)
 
 # PFXBlocProvider With RxSwift
 
