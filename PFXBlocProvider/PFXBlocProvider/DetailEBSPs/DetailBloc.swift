@@ -11,7 +11,8 @@ import RxSwift
 import RxRelay
 
 class DetailBloc: BaseBlocProtocol {
-    static let shared = SearchBloc()
+    static let shared = DetailBloc()
+    var currentState: BaseStateProtocol? = IdleDetailState()
     let stateRelay = PublishRelay<BaseStateProtocol>()
     var disposeBag = DisposeBag()
     
@@ -30,6 +31,7 @@ class DetailBloc: BaseBlocProtocol {
                     return
                 }
                 
+                self.currentState = detailState
                 self.stateRelay.accept(detailState)
             }, onError: { [weak self] error in
                 guard let self = self else { return }

@@ -12,6 +12,7 @@ import RxRelay
 
 class SearchBloc: BaseBlocProtocol {
     static let shared = SearchBloc()
+    var currentState: BaseStateProtocol? = IdleSearchState()
     let stateRelay = PublishRelay<BaseStateProtocol>()
     var disposeBag = DisposeBag()
     
@@ -31,6 +32,7 @@ class SearchBloc: BaseBlocProtocol {
                     return
                 }
                 
+                self.currentState = searchState
                 self.stateRelay.accept(searchState)
             }, onError: { [weak self] error in
                 guard let self = self else { return }

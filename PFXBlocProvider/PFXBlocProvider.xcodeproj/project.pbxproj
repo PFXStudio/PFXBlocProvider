@@ -71,6 +71,7 @@
 		D2E3221923FBBD2F009BD0F5 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212482C23FA7EF0008B3E77 /* SearchModel.swift */; };
 		D2E3221A23FBBD3F009BD0F5 /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF9E6523FA7BF300CCF1A3 /* GithubRepository.swift */; };
 		D2E3221B23FBBD4E009BD0F5 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */; };
+		D2E4DD09240340F40072405E /* ObservableType+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DD08240340F40072405E /* ObservableType+Extenstion.swift */; };
 		D2F7CFA62401179F00B98B18 /* ErrorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7CFA52401179F00B98B18 /* ErrorViewer.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		D2CD343623FCB4BA00056A8C /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		D2CD343823FCB51A00056A8C /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		D2E321E523FBAC8F009BD0F5 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
+		D2E4DD08240340F40072405E /* ObservableType+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extenstion.swift"; sourceTree = "<group>"; };
 		D2F7CFA52401179F00B98B18 /* ErrorViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewer.swift; sourceTree = "<group>"; };
 		F19D6B6472F6548B78800F5D /* Pods-PFXBlocProvider-PFXBlocProviderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PFXBlocProvider-PFXBlocProviderUITests.release.xcconfig"; path = "Target Support Files/Pods-PFXBlocProvider-PFXBlocProviderUITests/Pods-PFXBlocProvider-PFXBlocProviderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F91636716ECAC3A979DB74DC /* Pods-PFXBlocProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PFXBlocProvider.debug.xcconfig"; path = "Target Support Files/Pods-PFXBlocProvider/Pods-PFXBlocProvider.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,10 +218,10 @@
 		D25EACC024026C8400031946 /* DetailEBSPs */ = {
 			isa = PBXGroup;
 			children = (
-				D25EACC124026CB000031946 /* DetailBloc.swift */,
 				D25EACC224026CB000031946 /* DetailEvent.swift */,
-				D25EACC324026CB000031946 /* DetailProvider.swift */,
+				D25EACC124026CB000031946 /* DetailBloc.swift */,
 				D25EACC424026CB000031946 /* DetailState.swift */,
+				D25EACC324026CB000031946 /* DetailProvider.swift */,
 			);
 			path = DetailEBSPs;
 			sourceTree = "<group>";
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AA71AC23FCBC13008564C5 /* String+Extenstion.swift */,
+				D2E4DD08240340F40072405E /* ObservableType+Extenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,10 +294,10 @@
 		D2AF9E1E23FA719800CCF1A3 /* PFXBlocProvider */ = {
 			isa = PBXGroup;
 			children = (
-				D20241C12401EE110018C96D /* BaseEBSPs */,
 				D2AA71AE23FCBFD4008564C5 /* Bases */,
 				D2AA71AB23FCBC02008564C5 /* Extensions */,
 				D2E321E423FBAC73009BD0F5 /* Commons */,
+				D20241C12401EE110018C96D /* BaseEBSPs */,
 				D25EACC024026C8400031946 /* DetailEBSPs */,
 				D2AF9E5C23FA79D400CCF1A3 /* SearchEBSPs */,
 				D2AF9E6323FA7A9600CCF1A3 /* Repositories */,
@@ -367,8 +370,8 @@
 			children = (
 				D2AF9E5D23FA79F200CCF1A3 /* SearchEvent.swift */,
 				D2AF9E5923FA728000CCF1A3 /* SearchBloc.swift */,
-				D2AF9E5723FA726A00CCF1A3 /* SearchProvider.swift */,
 				D2AF9E5F23FA79FD00CCF1A3 /* SearchState.swift */,
+				D2AF9E5723FA726A00CCF1A3 /* SearchProvider.swift */,
 			);
 			path = SearchEBSPs;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				D2AA71A623FCBA52008564C5 /* SearchListViewModel.swift in Sources */,
 				D2AA71AA23FCBBBE008564C5 /* BaseSectionTableViewModel.swift in Sources */,
 				D20241C32401EE470018C96D /* BaseBlocProtocol.swift in Sources */,
+				D2E4DD09240340F40072405E /* ObservableType+Extenstion.swift in Sources */,
 				D25EACCB24026CB000031946 /* DetailState.swift in Sources */,
 				D20241C72401EE5B0018C96D /* BaseStateProtocol.swift in Sources */,
 				D2CD343723FCB4BA00056A8C /* SearchListViewController.swift in Sources */,

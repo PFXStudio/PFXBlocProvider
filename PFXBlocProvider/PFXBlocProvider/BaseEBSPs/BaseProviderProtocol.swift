@@ -8,6 +8,6 @@
 
 import Foundation
 
-// 비즈니스 로직에서 서비스 접근 프로토콜
+// 이벤트 비즈니스 로직에서 레파지토리 서비스 접근 프로토콜
 protocol BaseProviderProtocol {
 }

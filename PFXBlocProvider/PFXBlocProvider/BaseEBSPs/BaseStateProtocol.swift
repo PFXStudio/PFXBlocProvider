@@ -8,7 +8,8 @@
 
 import Foundation
 
-// ViewModel에게 전달되는 상태 프로토콜
+// 비즈니스 실행 중에 변경 되는 상태 프로토콜.
+// Event -> Bloc에게 전달 됨.
 protocol BaseStateProtocol {
 }
 

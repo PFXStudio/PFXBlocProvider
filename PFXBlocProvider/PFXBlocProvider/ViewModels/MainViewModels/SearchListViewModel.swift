@@ -43,7 +43,13 @@ class SearchListViewModel {
         self.output = SearchListViewModel.Output(sections: self.sectionsSubject.asObservable(), loading: self.loadingSubject.asObservable(), empty: self.emptySubject.asObservable(), error: self.errorSubject.asObservable())
         self.input = Input(searchObserver: self.searchSubject.asObserver(), nextObserver: self.nextSubject.asObserver())
         
-        self.searchSubject.distinctUntilChanged()
+        self.searchSubject
+            .filter({ [weak self] text -> Bool in
+                guard let self = self else { return false }
+                guard let _ = self.searchBloc.currentState as? IdleSearchState else { return false }
+                return true
+            })
+            .distinctUntilChanged()
             .skip(1)
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] text in

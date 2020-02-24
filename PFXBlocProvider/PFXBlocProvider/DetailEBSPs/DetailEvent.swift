@@ -32,21 +32,6 @@ class FetchingDetailEvent: DetailEventProtocol {
                 return Disposables.create()
             }
             
-            guard let page = self.parameterDict["page"], let q = self.parameterDict["q"] else {
-                observer.onError(NSError(domain: "\(#function) : \(#line)", code: BPError.network_invalid_parameter.rawValue, userInfo: nil))
-                return Disposables.create()
-            }
-            
-            if q.count <= 0 {
-                observer.onError(NSError(domain: "\(#function) : \(#line)", code: BPError.network_invalid_parameter.rawValue, userInfo: nil))
-                return Disposables.create()
-            }
-            
-            if Int(page) == nil {
-                observer.onError(NSError(domain: "\(#function) : \(#line)", code: BPError.network_invalid_parameter.rawValue, userInfo: nil))
-                return Disposables.create()
-            }
-            
             return Disposables.create()
             } as! Observable<Element>
     }

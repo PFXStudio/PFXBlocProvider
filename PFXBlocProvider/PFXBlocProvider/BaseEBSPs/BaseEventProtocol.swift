@@ -11,5 +11,6 @@ import RxSwift
 
 // ViewModel -> Bloc에게 전달하는 이벤트 프로토콜
 protocol BaseEventProtocol {
+    // 비즈니스 로직 실행
     func applyAsync() -> Observable<BaseStateProtocol>
 }
